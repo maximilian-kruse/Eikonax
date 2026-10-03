@@ -758,7 +758,7 @@ class DerivativeSolver:
 def compute_eikonax_jacobian(
     derivative_solver: DerivativeSolver,
     partial_derivative_parameter: sp.sparray,
-) -> npt.NDArray:
+) -> jtFloat[npt.NDArray, "num_vertices num_parameters"]:
     """Compute Jacobian from concatenation of gradients, computed with unit vector RHS.
 
     !!! warning
@@ -775,8 +775,9 @@ def compute_eikonax_jacobian(
             shape (N_V, M).
 
     Returns:
-        npt.NDArray: Dense Jacobian matrix with shape (N_V, M). Note: this routine builds
-            the full dense Jacobian and is intended only for small problems.
+        jtFloat[npt.NDArray, "num_vertices num_parameters"]: Dense Jacobian matrix with shape
+            (N_V, M). Note: this routine builds the full dense Jacobian and is intended only for
+            small problems.
     """
     rhs_adjoint = np.zeros(derivative_solver.sparse_permutation_matrix.shape[0])
     jacobian = []

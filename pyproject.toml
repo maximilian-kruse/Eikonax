@@ -3,7 +3,7 @@ authors = [{ name = "Maximilian Kruse", email = "maxkruse1604@gmail.com" }]
 maintainers = [{ name = "Maximilian Kruse", email = "maxkruse1604@gmail.com" }]
 description = "Differentiable Solver for the Anisotropic Eikonal Equation on Triangulated Meshes"
 name = "eikonax"
-requires-python = "==3.13.*"
+requires-python = ">=3.13"
 dynamic = ["version"]
 readme = "README.md"
 license = { text = "MIT" }
